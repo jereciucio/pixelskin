@@ -8,7 +8,10 @@
     <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
 <link rel="shortcut icon" href="images/favicon.ico" />
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- Agregar fuente con iconos -->
+<script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -72,20 +75,39 @@
     </main>
 
     <footer>
-        <h2>Información de Contacto</h2>
-        <!--Logo de github de cada -->
-        <a href="https://github.com/jereciucio/pixelskin"><img id="github" src="images/logogithub.png" alt="Logo de Github"></a>
-        <!-- Aca va información de contacto,etc-->
-        <div id="información">
-            <a href="https://github.com/jereciucio" />
-            <h3>Jeremias Agustin Ciucio</h3></a>
-            <a href="https://github.com/sepulvedalucas">
-                <h3>Lucas Sepulveda</h3>
-            </a>
-            <a href="https://github.com/jorgeugarte-alt">
-                <h3>Ugarte Cuevas Jorge Luis</h3>
-            </a>
-        </div>
+      <div class="footer-flex-container">
+	<div class="footer-entry">
+	  <h2 class="footer-heading"><img id="footer-img" src="./images/icono_alfabetoromano.png" alt="Logo de Pixelskin"> Pixelskin</h2>
+	  Pixelskin sirve para buscar, descargar y subir aspectos (skins) personalizados para personajes de Minecraft de forma gratuita, utilizando su biblioteca comunitaria.
+	</div>
+
+	<div class="footer-entry">
+	  <h2 class="footer-heading">Contacto</h2>
+	  <ul class="footer-linklist">
+	    <li><a class="footer-link" href="mailto:jeremias.martinez@est.fi.uncoma.edu.ar">
+		<i class="fa-solid fa-envelope"></i>
+		Jeremías Martinez
+	      </a>
+	    <li><a class="footer-link" href="mailto:lucas.sepulveda@est.fi.uncoma.edu.ar">
+		<i class="fa-solid fa-envelope"></i>
+		Lucas Sepúlveda
+	      </a>
+	    <li><a class="footer-link" href="mailto:jorge.ugarte@est.fi.uncoma.edu.ar">
+		<i class="fa-solid fa-envelope"></i>
+		Jorge Ugarte
+	      </a>
+	  </ul>
+	</div>
+
+	<div class="footer-entry">
+	  <h2 class="footer-heading">Recursos</h2>
+	  <ul>
+	    <li><a class="footer-link" href="https://github.com/jereciucio/pixelskin"><i class="fa-brands fa-github"></i> GitHub<a>
+	  </ul>
+
+	</div>
+      </div>
+
     </footer>
 </body>
 
