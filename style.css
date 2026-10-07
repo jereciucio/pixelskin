@@ -8,14 +8,16 @@ body{
     font-family: Open Sans, Arial;
     color:#454545;
     font-size:16px;
-    background-color:
+    background-color:#F7F7EF
 }
 
 
 #title-container{
     display: flex;
     justify-content: center;
+    text-align: center;
 }
+
 #title-image {
     width: 50%;
 }
