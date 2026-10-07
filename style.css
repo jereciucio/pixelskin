@@ -19,9 +19,7 @@ body{
 #title-image {
     width: 50%;
 }
-header{
-    background-color: black;
-}
+
 main {
   display: flex;
   flex-wrap: wrap;   
@@ -89,3 +87,44 @@ footer {
     height: 2em;
     vertical-align: middle;
 }
+
+/*header*/
+
+header{
+    background-color: beige;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
