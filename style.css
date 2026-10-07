@@ -36,7 +36,8 @@ ul {
 
 /* Cambiar color de los links por algo mas lindo */
 a {
-  color:#07a
+    color: #07a;
+    text-decoration: none;
 }
 
 a:visited {
@@ -94,41 +95,40 @@ footer {
 
 /*header*/
 
-header{
-    background-color: beige;
+header {
+    background-color: #A8C2F5;
+    padding: 2% 13% 2% 8%;
+    margin: 0 0 2% 0;
 }
 
 
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1%;
+}
 
+.login {
+    display: flex;
+    align-items: center;
+    gap: 15%;
+}
 
+.nav_link {
+    border-radius: 15%;
+    font-size: 120%;
+    font-weight: 600;
+    color: #1C2A4A;
+    padding: 1% 1% 1% 1%;
+    text-decoration: none;
+    white-space: nowrap;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.nav_link_register {
+    display: inline-block;
+    background-color: #1F3FA8;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 15% 15% 15% 15%;
+}
