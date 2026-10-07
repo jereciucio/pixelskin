@@ -48,6 +48,10 @@ a:visited {
   border: 1px solid #ccc;
   border-radius: 8px;
 }
+.skinrender {
+    height: 60%;
+}
+
 footer {
     margin-top:4em;
     text-align: center;
