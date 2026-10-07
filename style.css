@@ -44,6 +44,9 @@ a:visited {
     color: #941352;
 }
 
+
+/* Tarjetas de skin */
+
 .card {
     width: 200px;
     height: 250px;
@@ -54,6 +57,11 @@ a:visited {
 .skinrender {
     height: 60%;
 }
+
+
+
+/*Footer*/
+
 
 footer {
     margin-top: 4em;
@@ -93,13 +101,6 @@ footer {
     vertical-align: middle;
 }
 
-/*header*/
-
-header {
-    background-color: #A8C2F5;
-    padding: 2% 13% 2% 8%;
-    margin: 0 0 2% 0;
-}
 
 .contenido-superior{
     display: flex;
@@ -121,6 +122,17 @@ header {
 
 .estadisticas {
     border: 1px solid black;
+}
+
+
+
+
+/*header*/
+
+header {
+    background-color: #A8C2F5;
+    padding: 2% 13% 2% 8%;
+    margin: 0 0 2% 0;
 }
 
 
