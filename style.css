@@ -9,9 +9,12 @@ body{
 }
 
 
-#title{
+#title-container{
     display: flex;
     justify-content: center;
+}
+#title-image {
+    width: 50%;
 }
 header{
     background-color: black;
