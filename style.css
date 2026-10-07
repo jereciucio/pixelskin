@@ -96,6 +96,28 @@ header{
     background-color: beige;
 }
 
+.contenido-superior{
+    display: flex;
+    gap: 50px;
+}
+
+.informacion {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion img {
+    height: 100%;
+}
+
+.estadisticas {
+    border: 1px solid black;
+}
+
 
 
 
