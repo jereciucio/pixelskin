@@ -1,4 +1,21 @@
 .contenido-superior{
     display: flex;
-    gap: 30px;
+    gap: 50px;
+}
+
+.informacion {
+    border: 1px solid black;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacion img {
+    height: 100%;
+}
+
+.estadisticas {
+    border: 1px solid black;
 }
