@@ -12,7 +12,7 @@ if (skin) {
     document.getElementById("skin-img").alt = "skin de " + skin.nombre;
     document.getElementById("skin-nombre").textContent = skin.nombre;
     document.getElementById("skin-fecha").textContent = skin.fecha;
-    document.getElementById("skin-descripcion").textContent = skin.descricion;
+    document.getElementById("skin-descripcion").textContent = skin.descripcion;
 
     const lista = document.getElementById("skin-etiquetas");
     skin.etiquetas.forEach(function (etiqueta) {
