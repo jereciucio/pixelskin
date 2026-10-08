@@ -233,6 +233,7 @@ header nav {
     display: flex;
     justify-content: flex-end;
     padding: 1%;
+    height: 2em;
 }
 
 .login {
@@ -257,5 +258,5 @@ header nav {
     color: #fff;
     font-weight: 700;
     border-radius: 8px;
-    padding: 15% 15% 15% 15%;
+    padding: 5%;
 }
