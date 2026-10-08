@@ -3,14 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Skin</title>
+    <title>charxzn | Pixelskin</title>
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" href="style.css">
+
+    <!-- Agregar fuente con iconos -->
+    <script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
 </head>
+
 
 <body>
     <header>
-       <h1>pixelskin</h1> 
+        <nav>
+            <div class="login">
+                <a class="nav_link" href="Login">Iniciar sesión</a>
+                <a class="nav_link_register" href="Sign in">Registrarse</a>
+            </div>
+        </nav>
     </header>
+    
+    <div id="title-container">
+        <a href="./index.html"><img id="title-image" src="./images/logo_full.png" alt="Título de Pixelskin"></a>
+    </div>
+    <nav>
+        <search>
+            <label>
+                <input type="search" id="query" />
+            </label>
+            <section>
+                <ul id="results">
+                </ul>
+                <output id="no-result">
+                </output>
+            </section>
+            <button type="submit">Search</button>
+        </search>
+    </nav>
     <main>
         <section>
             <div class="contenido-superior">
