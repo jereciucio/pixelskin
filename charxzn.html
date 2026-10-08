@@ -13,8 +13,8 @@
     <script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
 </head>
 
-
 <body>
+
     <header>
         <nav>
             <div class="login">
@@ -23,24 +23,29 @@
             </div>
         </nav>
     </header>
-    
+
     <div id="title-container">
+        <!-- Aca va el TITULO-->
         <a href="./index.html"><img id="title-image" src="./images/logo_full.png" alt="Título de Pixelskin"></a>
     </div>
     <nav>
-        <search>
+        <!--ACA VA EL BUSCADOR-->
+        <search class="buscador">
             <label>
-                <input type="search" id="query" />
+                <input type="search" id="query" placeholder="Buscar por Nombre/Tag" />
             </label>
+            <button type="submit">Buscar</button>
             <section>
                 <ul id="results">
+                    <!-- search result content-->
                 </ul>
                 <output id="no-result">
+                    <!-- no results content -->
                 </output>
             </section>
-            <button type="submit">Search</button>
         </search>
     </nav>
+
     <main>
         <section>
             <div class="contenido-superior">
