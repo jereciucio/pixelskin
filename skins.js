@@ -11,27 +11,27 @@ const skins = {
         imagen: "images/Nizzuta.png",
         fecha: "4 de octubre de 2026",
         descripcion: "Una descripción",
-        etiquetas: [""]
+        etiquetas: ["Abstracto", "Violeta"]
     },
     MonsieurLuix: {
         nombre: "MonsieurLuix",
         imagen: "images/MonsieurLuix.png",
         fecha: "4 de octubre de 2026",
         descripcion: "Una descripción",
-        etiquetas: [""]
+        etiquetas: ["Steve", "Herobrine"]
     },
     Farfadox: {
         nombre: "Farfadox",
         imagen: "images/Farfadox.png",
         fecha: "4 de octubre de 2026",
         descripcion: "Creador de contenido.",
-        etiquetas: [""]
+        etiquetas: ["Youtuber"]
     },
     VegettaGaymer: {
         nombre: "VegettaGaymer",
         imagen: "images/VegettaGaymer.png",
         fecha: "4 de octubre de 2026",
         descripcion: "Creador de contenido.",
-        etiquetas: [""]
+        etiquetas: ["Youtuber", "Dragon Ball"]
     }
 }
