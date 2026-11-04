@@ -7,6 +7,10 @@ const connectDB = require('./config/db');
 connectDB();
 
 
+const tagRouter = require("./routes/tagRoute");
+app.use(express.json());
+
+app.use("/api",tagRouter);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
