@@ -3,6 +3,10 @@ const app = express();
 const path = require('path');
 const config = require('./config/config');
 
+const connectDB = require('./config/db');
+connectDB();
+
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
