@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 
 const tagSchema = new mongoose.Schema({
-    id: String,
-    displayName: String
+    _id: {type: String, required:true},
+    displayName: {type: String, required:true},
+    deletedAt: {type: Date, default: null},
 });
+
+tagSchema.methods.softDelete = async function () {
+    this.deleteAt = new Date();
+    return this.save();
+}
 
 const Tag = mongoose.model('Tag', tagSchema);
 module.exports = Tag;
