@@ -6,13 +6,10 @@ const tagSchema = new mongoose.Schema({
     deletedAt: {type: Date, default: null},
 });
 
-tagSchema.methods.softDelete = async () => {
+tagSchema.methods.softDelete = async function () {
     this.deleteAt = new Date();
     return this.save();
 }
 
-
-
 const Tag = mongoose.model('Tag', tagSchema);
 module.exports = Tag;
-String
