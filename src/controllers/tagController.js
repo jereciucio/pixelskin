@@ -20,7 +20,29 @@ const createTag = async (req, res) => {
 	}
 }
 
+const getTags = async (req, res) => {
+    try {
+	const tags = await Tag.find({}).exec();
+	res.json(tags);
+    } catch (err) {
+	console.log(err.message);
+	res.status(500).json({message: err.message});
+    }
+};
+
+const getTagById = async (req, res) => {
+    try {
+	const tag = await Tag.findById(req.params.tagid).exec();
+	res.json(tag);
+    } catch (err) {
+	console.log(err.message);
+	res.status(500).json({message: err.message});
+    }
+};
+
 module.exports = {
-	createTag,
+    createTag,
+    getTags,
+    getTagById
 }
 const regexAlphanumeric = /^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$/;
