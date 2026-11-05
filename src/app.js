@@ -4,7 +4,7 @@ const path = require('path');
 const config = require('./config/config');
 
 const connectDB = require('./config/db');
-await connectDB();
+connectDB();
 
 const errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
