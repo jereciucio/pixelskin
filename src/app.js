@@ -6,6 +6,8 @@ const config = require('./config/config');
 const connectDB = require('./config/db');
 connectDB();
 
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
 
 const tagRouter = require("./routes/tagRoute");
 app.use(express.json());
