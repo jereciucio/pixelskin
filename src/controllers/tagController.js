@@ -7,8 +7,18 @@ const uuid = require('uuid');
 // Create Tag
 const createTag = async (req, res, next) => {
     try {
+	// Chequeamos si ya existe una etiqueta con ese nombre
+	const exists = await Tag.exists({displayName: req.body.displayName});
+	if (exists) {
+	    // Si existe, devolvemos error
+	    const err = new Error("A tag with that displayName already exists.");
+	    err.status = 409; // 409: Conflict
+	    return next(err);
+	}
+
+	// Si no existe, la creamos tranquilamente
 	const newTagID = uuid.v7();
-	const newTagName = req.body.displayName
+	const newTagName = req.body.displayName;
 	const newTag = await Tag.create({ displayName: newTagName, _id: newTagID });
 	res.status(201).json(newTag);
     } catch (err) {
@@ -16,6 +26,8 @@ const createTag = async (req, res, next) => {
 	next(err);
     }
 }
+
+// Get all tags
 const getTags = async (req, res) => {
     try {
 	    const tags = await Tag.find({}).exec();
