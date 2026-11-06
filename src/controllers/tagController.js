@@ -38,14 +38,22 @@ const getTags = async (req, res) => {
     }
 };
 
+// Obtener tag por ID
 const getTagById = async (req, res) => {
     try {
-	const tag = await Tag.findById(req.params.tagid).exec();
-	res.json(tag);
+	const tag = await Tag.findById(req.params.id).exec();
+
+	// Si no se encontró la tag, devuelve error 404
+	if (!tag) {
+	    const err = new Error("Not found.");
+	    err.status = 404;
+	    return next(err);
+	}
+
+	res.status(200).json(tag);
     } catch (err) {
 	console.log(err.message);
-	res.status(500).json({message: err.message});
-    }
+	next(err);
 };
 
 module.exports = {
