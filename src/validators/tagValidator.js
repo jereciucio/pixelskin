@@ -7,7 +7,7 @@ const tagSchema = Joi.object({
 	.alphanum()
 	.required()
 	.trim()
-	.uppercase()
+	.lowercase()
 	.messages({
 	    'string.min': 'The displayName field must be between 2 and 16 characters.',
 	    'string.max': 'The displayName field must be between 2 and 16 characters.',
@@ -17,13 +17,16 @@ const tagSchema = Joi.object({
 });
 
 const validateTag = (req, res, next) => {
-    const {error} = tagSchema.validate(req.body);
+    const {error, value} = tagSchema.validate(req.body, {"convert": true});
 
     if (error) {
 	error.status = 400;
 	error.message = error.details[0].message;
 	return next(error); // Manda el error al errorHandler
     }
+
+    // Si no habia errores, guarda el objeto reformateado
+    req.body = value;
 
     next(); // Los datos son válidos, pasa al controlador
 }
