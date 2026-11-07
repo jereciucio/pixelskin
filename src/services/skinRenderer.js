@@ -146,7 +146,7 @@ function renderBack(skinImage, isSlim, scale) {
     // Brazo derecho: Tamaño 4x12 o 3x12, dibujamos en (0,8) o en
     // (1,8) dependiendo el ancho
     drawPart(context, skinImage, scale, isSlim ? rightArmBack.x -1 : rightArmBack.x, rightArmBack.y, armWidth, 12, 12, 8);
-    drawPart(context, skinImage, scale, isSlim ? rightSleeveBack.x - 1 : rightSleeveBack.x, rightSleeveBack.y, armWidth, 12, isSlim ? 1 : 12, 8);
+    drawPart(context, skinImage, scale, isSlim ? rightSleeveBack.x - 1 : rightSleeveBack.x, rightSleeveBack.y, armWidth, 12, 12, 8);
     // Brazo izquierdo: Tamaño 4x12 o 3x12, dibujamos en (12,8)
     drawPart(context, skinImage, scale, isSlim ? leftArmBack.x - 1 : leftArmBack.x, leftArmBack.y, armWidth, 12, isSlim ? 1 : 0, 8);
     drawPart(context, skinImage, scale, isSlim ? leftSleeveBack.x - 1 : leftSleeveBack.x, leftSleeveBack.y, armWidth, 12, isSlim ? 1 : 0, 8);
