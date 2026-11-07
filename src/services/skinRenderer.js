@@ -37,31 +37,11 @@ const leftPantsBack = { x: 12, y: 52 };
 const headBack = { x: 24, y: 8 };
 const hatBack = { x: 56, y: 8 };
 
-function drawPart(destinationCanvas, skinImage, scale, sourceX, sourceY, sourceWidth, sourceHeight, destinationX, destinationY, mirror = false) {
-    // Guarda la 'configuración' del canvas, ya que en las partes
-    // traseras de la skin lo invertimos, si lo guardamos acá se puede
-    // luego restaurar
-    destinationCanvas.save();
+function drawPart(destinationCanvas, skinImage, scale, sourceX, sourceY, sourceWidth, sourceHeight, destinationX, destinationY) {
 
-    if (mirror) {
-	// Movemos el punto de origen al borde derecho de la parte que queremos dibujar, así al invertir el canvas queda bien
-	destinationCanvas.translate((destinationX + sourceWidth) * scale, destinationY * scale);
-
-	// Invertimos horizontalmente
-	destinationCanvas.scale(-1, 1);
-
-	// Dibujamos en (0,0), relativo a nuestras coordenadas que
-	// movimos e invertimos
-	destinationCanvas.drawImage(skinImage, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, sourceWidth * scale, sourceHeight * scale);
-    } else {
-	// En el caso normal, es decir, cuando dibujamos la skin de
-	// frente, no hace falta invertir ni mover el origen de
-	// coordenadas, así que copiamos la imagen directamente en las
-	// coordenadas destino, escalándola.
-	destinationCanvas.drawImage(skinImage, sourceX, sourceY, sourceWidth, sourceHeight, destinationX * scale, destinationY * scale, sourceWidth * scale, sourceHeight * scale);
-    }
-
-    destinationCanvas.restore();
+    // Copiamos la imagen directamente en las coordenadas destino,
+    // escalándola.
+    destinationCanvas.drawImage(skinImage, sourceX, sourceY, sourceWidth, sourceHeight, destinationX * scale, destinationY * scale, sourceWidth * scale, sourceHeight * scale);
 }
 
 
