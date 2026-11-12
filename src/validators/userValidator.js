@@ -28,7 +28,7 @@ const userSchema = Joi.object({
 });
 
 const validateUser = (req, res, next) => {
-    const {error, value} = userSchema.validate(reg.body, {"convert": true});
+    const {error, value} = userSchema.validate(req.body, {"convert": true});
 
     if (error) {
         error.status = 400;
