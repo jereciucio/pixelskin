@@ -54,10 +54,12 @@ const getTagById = async (req, res) => {
     } catch (err) {
 	console.log(err.message);
 	next(err);
+    }
 };
+
 
 module.exports = {
     createTag,
     getTags,
     getTagById
-}
+};
