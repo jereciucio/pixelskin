@@ -20,7 +20,11 @@ const userSchema = Joi.object({
         'string.max': 'The userName field must be between 4 and 24 characters.',
         'string.alphanum': 'The userName field must only contion alphanumeric characters.',
         'any.required': 'The userName field is required',
-    })
+    }),
+    password: Joi.string()
+    .required()
+    .min(8)
+    .max(64)
 });
 
 const validateUser = (req, res, next) => {
