@@ -11,10 +11,18 @@ const hashPassword = require('../services/passwordHash');
 const createUser = async (req, res, next) => {
     try {
         // Chequeamos si ya existe un usuario con ese nombre
-        const exists = await User.exists({userName: req.body.userName});
-        if (exists) {
+        const existsName = await User.exists({userName: req.body.userName});
+        if (existsName) {
             // Si ya existe, devolvemos error
             const err = new Error("A user with that name already exists.");
+            err.status = 409; // 409: Conflict
+            return next(err);
+        }
+
+        const existsEmail = await User.exists({userEmail: req.body.userEmail});
+        if (existsEmail) {
+            // Si ya existe, devolvemos error
+            const err = new Error("A user with that email already exists.");
             err.status = 409; // 409: Conflict
             return next(err);
         }
