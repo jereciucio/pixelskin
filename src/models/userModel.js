@@ -7,12 +7,12 @@ const userSchema = new mongoose.Schema({
     passwordHash: {type: String, required:true},
     passwordSalt: {type: String, required:true},
     creationDate: {type: Date, required:true},
-    deleteAt: {type: Date, default: null},
+    deletedAt: {type: Date, default: null},
 });
 
 // Agregar un índice en el nombre, así evitamos username con nombres
 // duplicados
-userSchema.index({displayName: 1}, {unique: true});
+userSchema.index({userName: 1}, {unique: true});
 
 // Establecer la forma en la que el modelo se va a pasar a JSON, para
 // ocultar campos innecesarios al cliente como el deleteAt, passwordHash,
