@@ -2,6 +2,10 @@ const User = require('../models/userModel');
 
 const uuid = require('uuid');
 
+const crypto = require('crypto');
+
+const hashPassword = require('../services/passwordHash');
+
 // Create User
 
 const createUser = async (req, res, next) => {
@@ -19,15 +23,19 @@ const createUser = async (req, res, next) => {
         const newUserID = uuid.v7();
         const newUserName = req.body.userName;
         const newUserEmail = req.body.userEmail;
-        const newUserPasswordHash = req.body.passwordHash; // Definir bien
-        const newUserPasswordSalt = req.body.passwordSalt; // Definir bien
-        const newCreationDate = req.body.creationDate; // Definir bien
+        const newUserPassword = req.body.password;
+        
+        // Genera un string aleatorio de 32 caracteres.
+        const newUserPasswordSalt = crypto.randomBytes(16).toString('hex'); 
+        // Genera un string con la password + salt hasheada 
+        const newUserPasswordHash = hashPassword(newUserPassword, newUserPasswordSalt);
+        const newCreationDate = new Date(); // Genera la fecha actual
         const newUser = await User.create({
             userName: newUserName,
             _id: newUserID,
             userEmail: newUserEmail,
-            userPasswordHash: newUserPasswordHash,
-            userPasswordSalt: newUserPasswordSalt,
+            passwordHash: newUserPasswordHash,
+            passwordSalt: newUserPasswordSalt,
             creationDate: newCreationDate
         });
         res.status(201).json(newUser);
