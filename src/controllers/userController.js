@@ -6,7 +6,7 @@ const crypto = require('crypto');
 
 const hashPassword = require('../services/passwordHash');
 
-// Create User
+// Crear Usuario
 
 const createUser = async (req, res, next) => {
     try {
@@ -15,7 +15,7 @@ const createUser = async (req, res, next) => {
         if (existsName) {
             // Si ya existe, devolvemos error
             const err = new Error("A user with that name already exists.");
-            err.status = 409; // 409: Conflict
+            err.status = 409; // 409: Conflicto
             return next(err);
         }
 
@@ -23,7 +23,7 @@ const createUser = async (req, res, next) => {
         if (existsEmail) {
             // Si ya existe, devolvemos error
             const err = new Error("A user with that email already exists.");
-            err.status = 409; // 409: Conflict
+            err.status = 409; // 409: Conflicto
             return next(err);
         }
 
@@ -54,7 +54,7 @@ const createUser = async (req, res, next) => {
     }
 }
 
-// Get all users
+// Obtener todos los usuarios
 const getUsers = async (req, res) => {
     try {
         const users = await User.find({}).exec();
@@ -65,6 +65,7 @@ const getUsers = async (req, res) => {
     }
 }
 
+// Obtener Usuario por Id
 const getUserById = async (req, res) => {
     try {
         const user = await User.findById(req.params.id).exec();
