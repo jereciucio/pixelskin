@@ -10,6 +10,6 @@ router.post("/", validateUser, createUser);
 router.get("/", getUsers);
 
 // Get user by id
-router.get("/:tagid", getUserById);
+router.get("/:userid", getUserById);
 
 module.exports = router;
