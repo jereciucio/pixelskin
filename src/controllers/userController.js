@@ -69,7 +69,7 @@ const getUserById = async (req, res) => {
     try {
         const user = await User.findById(req.params.id).exec();
         // Si no encontro el user, devuelve error 404
-        if (!tag) {
+        if (!user) {
             const err = new Error("Not found.");
             err.status = 404;
             return next(err);
