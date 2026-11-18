@@ -3,13 +3,13 @@ const router = express.Router();
 const {createUser, getUsers, getUserById} = require('../controllers/userController');
 const validateUser = require('../validators/userValidator');
 
-// Create User
+// Crear Usuario
 router.post("/", validateUser, createUser);
 
-// Get all Users
+// Obtener todos los usuarios
 router.get("/", getUsers);
 
-// Get user by id
+// Obtener usuario por Id
 router.get("/:userid", getUserById);
 
 module.exports = router;
