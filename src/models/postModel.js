@@ -2,14 +2,26 @@ const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
     _id: {type:String , require:true},
-    displayName: {type:String, require:true},
-    description: {type:String,require:true},
-    viewCount: {type:Number, require:false},
-        skinImage: { 
+    displayName: {type:String, required:true},
+    description: {type:String,required:true},
+    viewCount: {type:Number, required:false, default: 0},
+    skinImage: { 
             data:Buffer,
-            contentType: 'image/png'},
+            contentType: String,
+            required:true,
+    },
+    skinPreviewBack: {
+        data: Buffer,
+        contentType: String,
+        required: true,
+    },
+    skinPreviewFront: {
+            data:Buffer,
+            contentType: String,
+            required: true,
+    },
     deletedAt: {type: Date, default: null},
-    skinType: {type: Number , require:true}, 
+    isSlim : {type:Booleano,required:true},
 })
 
 postSchema.set('toJSON',{
