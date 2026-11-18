@@ -32,7 +32,7 @@ const createPost = async (req, res, next) => {
 const getPost = async (req, res,next) => {
     try {
 
-        const page = Math.max(parseInt(req.query.page) || 1,1);
+        const page = Math.max(parseInt(req.query.page) || 1, 1);
         const limit = Math.min(Math.max(parseInt(req.query.limit) || 10,1),100);
         const offset = (page - 1)*limit;
 
@@ -51,7 +51,8 @@ const getPost = async (req, res,next) => {
 //Obtener post por ID
 const getPostById = async (req, res, next) => {
     try {
-        const post = await Post.findById(req.params.postid).exec();
+        const post = await Post.findByIdAndUpdate(req.query._id, {$inc: {viewCount:1}}, 
+            {returnDocument:'after'});
         if (!post) {
             const err = new Error("Not found.");
             err.status = 404;
@@ -63,7 +64,6 @@ const getPostById = async (req, res, next) => {
         next(err);
     }
 };
-
 
 
 module.exports = {
