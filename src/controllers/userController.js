@@ -67,11 +67,18 @@ const getUsers = async (req, res) => {
 
 const getUserById = async (req, res) => {
     try {
-        const user = await User.findById(req.params.userid).exec();
-        res.json(user);
+        const user = await User.findById(req.params.id).exec();
+        // Si no encontro el user, devuelve error 404
+        if (!tag) {
+            const err = new Error("Not found.");
+            err.status = 404;
+            return next(err);
+        }
+
+        res.status(200).json(user);
     } catch (err) {
         console.log(err.message);
-        res.status(500).json({message: err.message});
+        next(err);
     }
 }
 
