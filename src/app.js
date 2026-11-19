@@ -28,6 +28,10 @@ app.get('/images/:image', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/images/', req.params.image));
 });
 
+app.get('/style.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/style.css'));
+});
+
 
 // Usar el errorHandler personalizado
 const errorHandler = require('./middleware/errorHandler');
