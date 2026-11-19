@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixelskin - Comparte Skins de Minecraft!</title>
-    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="style.css">
 
     <!-- Agregar fuente con iconos -->
     <script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
-</head>
+  </head>
 
-<body>
-  <div id="header-container"></div>
+  <body>
+    <div id="header-container"></div>
+
     <main>
-        <a href="./skin.html?skin=Nizzuta">
-            <div class="card">
-                <img class="skinrender" src="images/Nizzuta.png" alt="skin de Nizzuta">
-                <div class="container_card">
-                    <h4><b>Nizzuta</b></h4>
-                </div>
-            </div>
-        </a>
+      <div id="posts-container"></div>
+
+      <div id="loader"> Cargando... </div>
+
     </main>
+
     <div id="footer-container"></div>
 
     <!-- Cargar los componentes de forma dinámica -->
-    <script src="./components/footer.js"></script>
-    <script src="./components/header.js"></script>
-</body>
+    <script src="/components/footer.js"></script>
+    <script src="/components/header.js"></script>
+    <script src="/components/posts.js"></script>
+  </body>
 
 </html>

@@ -12,7 +12,7 @@ headerContainer.innerHTML =  `
 
     <div id="title-container">
         <!-- Aca va el TITULO-->
-        <a href="./index.html"><img id="title-image" src="./images/logo_full.png" alt="Título de Pixelskin"></a>
+        <a href="/"><img id="title-image" src="/images/logo_full.png" alt="Título de Pixelskin"></a>
     </div>
     <nav>
         <!--ACA VA EL BUSCADOR-->

@@ -4,7 +4,7 @@ footerContainer.innerHTML = `
     <footer>
         <div class="footer-flex-container">
             <div class="footer-entry">
-                <h2 class="footer-heading"><img id="footer-img" src="./images/icono_alfabetoromano.png"
+                <h2 class="footer-heading"><img id="footer-img" src="/images/icono_alfabetoromano.png"
                         alt="Logo de Pixelskin"> Pixelskin</h2>
                 Pixelskin sirve para buscar, descargar y subir aspectos (skins) personalizados para personajes de
                 Minecraft de forma gratuita, utilizando su biblioteca comunitaria.

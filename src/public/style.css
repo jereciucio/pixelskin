@@ -22,7 +22,7 @@ body {
     width: 50%;
 }
 
-main {
+#posts-container {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
@@ -54,15 +54,27 @@ a:visited {
     border: 1px solid #ccc;
     border-radius: 12px;
     text-align: center;
+    padding: 5px;
 }
 
 
 
-.skinrender {
-    height: 85%;
+.skinrender-container {
+    height: 80%;
     background: #EEF1FA;
     border-radius: 8px;
-    margin-top: 4%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 5px;
+
+}
+
+.skinrender {
+    height: 80%;
+    aspect-ratio: 1/2;
 }
 
 /*Buscador*/
@@ -259,4 +271,13 @@ header nav {
     font-weight: 700;
     border-radius: 8px;
     padding: 5%;
+}
+
+#loader {
+    display: none;
+}
+
+.show {
+    display: block;
+
 }
