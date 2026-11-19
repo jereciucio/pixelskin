@@ -1,5 +1,6 @@
 const Post = require('../models/postModel');
 const uuid = require('uuid');
+const renderSkin = require('../services/skinRenderer');
 
 const createPost = async (req, res, next) => {
     try {
@@ -11,15 +12,23 @@ const createPost = async (req, res, next) => {
         }
         const newPostID = uuid.v7();
         const newPostName = req.body.displayName;
-        const newPost = await Post.create({ displayName: newPostName, 
+	const newPostImageBuffer = Buffer.from(req.body.skinImage, "base64");
+
+	// Renderizar las vistas previas
+	const newPostPreviewFront = await renderSkin(newPostImageBuffer, req.body.isSlim, "front");
+	const newPostPreviewBack = await renderSkin(newPostImageBuffer, req.body.isSlim, "back");
+
+        const newPost = await Post.create({
+	    displayName: newPostName,
             _id: newPostID, 
             description: req.body.description, 
-            skinType: req.body.skinType, 
+            isSlim: req.body.isSlim,
+	    skinImage: {data: newPostImageBuffer, contentType: "image/png"},
+	    skinPreviewFront: {data: newPostPreviewFront, contentType: "image/png"},
+	    skinPreviewBack: {data: newPostPreviewBack, contentType: "image/png"},
         });
-       
-       
-       
-            res.status(201).json(newPost);
+
+	res.status(201).json(newPost);
     } catch (err) {
         console.log(err.message);
         next(err);
@@ -51,7 +60,7 @@ const getPost = async (req, res,next) => {
 //Obtener post por ID
 const getPostById = async (req, res, next) => {
     try {
-        const post = await Post.findByIdAndUpdate(req.query._id, {$inc: {viewCount:1}}, 
+        const post = await Post.findByIdAndUpdate(req.params.postid, {$inc: {viewCount:1}},
             {returnDocument:'after'});
         if (!post) {
             const err = new Error("Not found.");
