@@ -140,4 +140,19 @@ function renderBack(skinImage, isSlim, scale) {
     return canvas.toBuffer('image/png');
 }
 
-module.exports = {renderFront, renderBack};
+async function renderSkin(skinBuffer, isSlim, view, scale = 32) {
+    if (view != "front" && view != "back") {
+	const error = new Error("renderSkin error: invalid skin view, " + "view");
+	throw Error;
+    }
+
+    const skinImage = await loadImage(skinBuffer);
+
+    if (view === "front") {
+	renderFront(skinImage, isSlim, scale);
+    } else {
+	renderBack(skinImage, isSlim, scale);
+    }
+}
+
+module.exports = renderSkin;
