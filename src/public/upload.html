@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir skin - Pixelskin</title>
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <main>
+      <section class="upload-section">
+        <h1>Subir skin</h1>
+        <form id="upload-form" class="upload-form">
+          <label for="displayName">Nombre</label>
+          <input id="displayName" name="displayName" type="text" minlength="2" maxlength="32" required>
+
+          <label for="description">Descripción</label>
+          <textarea id="description" name="description" rows="4" maxlength="500" required></textarea>
+
+          <label class="checkbox-label" for="isSlim">
+            <input id="isSlim" name="isSlim" type="checkbox">
+            Modelo slim (Alex)
+          </label>
+
+          <label for="skinImage">Archivo de skin (PNG)</label>
+          <input id="skinImage" name="skinImage" type="file" accept="image/png" required>
+
+          <button type="submit">Subir</button>
+        </form>
+
+        <p id="upload-status" class="upload-status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="/components/footer.js"></script>
+    <script src="/components/header.js"></script>
+    <script src="/components/upload.js"></script>
+  </body>
+</html>

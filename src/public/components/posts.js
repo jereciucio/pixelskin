@@ -4,7 +4,7 @@ const loader = document.querySelector('#loader');
 let currentPage = 1;
 const limit = 6;
 let isLoading = false;
-let hasMorePosts = true;
+let hasMorePosts = true; // Indica si quedan posts por cargar
 
 // Pedir los posts a la API
 const getPosts = async (page, limit) => {

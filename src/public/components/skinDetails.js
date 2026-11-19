@@ -25,10 +25,11 @@ const loadPost = async () => {
             document.getElementById("skin-nombre").textContent = postData.displayName;
             document.getElementById("skin-descripcion").textContent = postData.description;
 
+            // Preparar el enlace para descargar la skin original
             const downloadButton = document.getElementById("download-skin");
             if (downloadButton && postData.skinImage && postData.skinImage.data) {
-		// Eliminar caracteres especiales de el nombre de la
-		// skin que no pueden estar en el nombre de un archivo
+                // Eliminar caracteres especiales del nombre de la
+                // skin que no pueden estar en el nombre de un archivo
                 const safeName = (postData.displayName || "skin")
                     .replace(/[^a-z0-9_\-]+/gi, "_")
                     .replace(/^_+|_+$/g, "") || "skin";

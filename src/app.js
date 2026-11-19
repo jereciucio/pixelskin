@@ -43,6 +43,11 @@ app.get('/components/:script' , (req, res) => {
 app.get('/skin/:skin',(req, res) => {
     res.sendFile(path.join(__dirname,'public/skin.html'));
 });
+
+app.get('/upload', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/upload.html'));
+});
+
 // Usar el errorHandler personalizado
 const errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);

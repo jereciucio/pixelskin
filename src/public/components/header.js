@@ -4,6 +4,7 @@ headerContainer.innerHTML =  `
 <header>
         <nav>
             <div class="login">
+                <a class="nav_link" href="/upload">Subir skin</a>
                 <a class="nav_link" href="Login">Iniciar sesión</a>
                 <a class="nav_link_register" href="Sign in">Registrarse</a>
             </div>
