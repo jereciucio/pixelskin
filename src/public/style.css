@@ -25,8 +25,11 @@ body {
 #posts-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 24px;
     justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
 
 ul {
@@ -49,12 +52,12 @@ a:visited {
 
 .card {
     background-color: #fff;
-    width: 200px;
-    height: 250px;
+    width: 280px;
+    height: 320px;
     border: 1px solid #ccc;
     border-radius: 12px;
     text-align: center;
-    padding: 5px;
+    padding: 8px;
 }
 
 
