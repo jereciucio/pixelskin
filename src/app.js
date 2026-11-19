@@ -17,6 +17,8 @@ app.use("/api/tags",tagRouter);
 const postRouter = require("./routes/tagRoute");
 app.use("/api/posts",postRouter);
 
+const userRouter = require("./routes/userRoute");
+app.use("/api/users",userRouter);
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));

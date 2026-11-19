@@ -1,0 +1,91 @@
+const User = require('../models/userModel');
+
+const uuid = require('uuid');
+
+const crypto = require('crypto');
+
+const hashPassword = require('../services/passwordHash');
+
+// Crear Usuario
+
+const createUser = async (req, res, next) => {
+    try {
+        // Chequeamos si ya existe un usuario con ese nombre
+        const existsName = await User.exists({userName: req.body.userName});
+        if (existsName) {
+            // Si ya existe, devolvemos error
+            const err = new Error("A user with that name already exists.");
+            err.status = 409; // 409: Conflicto
+            return next(err);
+        }
+
+        const existsEmail = await User.exists({userEmail: req.body.userEmail});
+        if (existsEmail) {
+            // Si ya existe, devolvemos error
+            const err = new Error("A user with that email already exists.");
+            err.status = 409; // 409: Conflicto
+            return next(err);
+        }
+
+        // Si no existe, lo creamos
+        const newUserID = uuid.v7();
+        const newUserName = req.body.userName;
+        const newUserEmail = req.body.userEmail;
+        const newUserPassword = req.body.password;
+        
+        // Genera un string aleatorio de 32 caracteres.
+        const newUserPasswordSalt = crypto.randomBytes(16).toString('hex'); 
+        // Genera un string con la password + salt hasheada 
+        const newUserPasswordHash = hashPassword(newUserPassword, newUserPasswordSalt);
+        const newCreationDate = new Date(); // Genera la fecha actual
+        const newUser = await User.create({
+            userName: newUserName,
+            _id: newUserID,
+            userEmail: newUserEmail,
+            passwordHash: newUserPasswordHash,
+            passwordSalt: newUserPasswordSalt,
+            creationDate: newCreationDate
+        });
+        res.status(201).json(newUser);
+
+    } catch (err) {
+        console.log(err.message);
+        next(err);
+    }
+}
+
+// Obtener todos los usuarios
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find({}).exec();
+        res.status(200).json(users);
+    } catch (err) {
+        console.log(err.message);
+        next(err);
+    }
+}
+
+// Obtener Usuario por Id
+const getUserById = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).exec();
+        // Si no encontro el user, devuelve error 404
+        if (!user) {
+            const err = new Error("Not found.");
+            err.status = 404;
+            return next(err);
+        }
+
+        res.status(200).json(user);
+    } catch (err) {
+        console.log(err.message);
+        next(err);
+    }
+}
+
+module.exports = {
+    createUser,
+    getUsers,
+    getUserById
+}
+
