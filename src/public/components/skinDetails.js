@@ -24,7 +24,7 @@ const loadPost = async () => {
             document.getElementById("skin-img-back").src = `data:${postData.skinPreviewBack.contentType};base64,${postData.skinPreviewBack.data}`;
             document.getElementById("skin-nombre").textContent = postData.displayName;
             document.getElementById("skin-descripcion").textContent = postData.description;
-
+            document.getElementById("visita-num").textContent = postData.viewCount;
             // Preparar el enlace para descargar la skin original
             const downloadButton = document.getElementById("download-skin");
             if (downloadButton && postData.skinImage && postData.skinImage.data) {
