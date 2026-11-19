@@ -14,6 +14,9 @@ app.use(express.json());
 const tagRouter = require("./routes/tagRoute");
 app.use("/api/tags",tagRouter);
 
+const userRouter = require("./routes/userRoute");
+app.use("/api/users",userRouter);
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
