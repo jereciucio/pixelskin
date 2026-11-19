@@ -14,6 +14,9 @@ app.use(express.json());
 const tagRouter = require("./routes/tagRoute");
 app.use("/api/tags",tagRouter);
 
+const postRouter = require("./routes/tagRoute");
+app.use("/api/posts",postRouter);
+
 const userRouter = require("./routes/userRoute");
 app.use("/api/users",userRouter);
 
