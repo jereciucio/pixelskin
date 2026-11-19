@@ -2,7 +2,7 @@ const postsContainer = document.querySelector('#posts-container');
 const loader = document.querySelector('#loader');
 
 let currentPage = 1;
-const limit = 6;
+const limit = 3;
 let isLoading = false;
 let hasMorePosts = true; // Indica si quedan posts por cargar
 
