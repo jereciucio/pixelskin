@@ -1,6 +1,6 @@
 const Joi = require('joi');
 
-const tagSchema = Joi.object({
+const postSchema = Joi.object({
     displayName: Joi.string()
         .min(2)
         .max(32)
@@ -8,17 +8,14 @@ const tagSchema = Joi.object({
         .messages({
             'string.min': 'The displayName field must be between 2 and 16 characters.',
             'string.max': 'The displayName field must be between 2 and 16 characters.',
-            'any.required': 'The displayName fiel is required'
+            'any.required': 'The displayName field is required'
         }),
-
     description: Joi.string()
         .trim()
         .max(500)
         .required(),
-
-    skinType : Joi.number()
-        .valid(0,1)
-        .default(0)
+    isSlim: Joi.bool().required(),
+    skinImage: Joi.string().base64()
 });
 
 const validatePost = (req, res, next) =>{
@@ -26,11 +23,11 @@ const validatePost = (req, res, next) =>{
 
     if(error){
         error.status = 400;
-        error.messages = error.details[0].message;
+        error.message = error.details[0].message;
         return next(error);
     }
     req.body = value;
-    
+
     next();
 }
 

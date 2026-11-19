@@ -5,10 +5,10 @@
     in pkgs.mkShell {
       buildInputs = with pkgs; [
         nodejs
-	python3
+	      python3
         cairo
-	freetype
-	fontconfig
+	      freetype
+	      fontconfig
         pango
         libuuid
         pkg-config
@@ -24,6 +24,7 @@
         pkgs.pango
         pkgs.libuuid
         pkgs.fontconfig
+        pkgs.freetype
       ];
     };
   };

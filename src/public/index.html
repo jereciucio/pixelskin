@@ -1,133 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixelskin - Comparte Skins de Minecraft!</title>
-    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="style.css">
 
     <!-- Agregar fuente con iconos -->
     <script src="https://kit.fontawesome.com/8013ee8fa0.js" crossorigin="anonymous"></script>
-</head>
+  </head>
 
-<body>
-
-    <header>
-        <nav>
-            <div class="login">
-                <a class="nav_link" href="Login">Iniciar sesión</a>
-                <a class="nav_link_register" href="Sign in">Registrarse</a>
-            </div>
-        </nav>
-    </header>
-
-    <div id="title-container">
-        <!-- Aca va el TITULO-->
-        <a href="./index.html"><img id="title-image" src="./images/logo_full.png" alt="Título de Pixelskin"></a>
-    </div>
-    <nav>
-        <!--ACA VA EL BUSCADOR-->
-        <search class="buscador">
-            <label>
-                <input type="search" id="query" placeholder="Buscar por Nombre/Tag" />
-            </label>
-            <button type="submit">Buscar</button>
-            <section>
-                <ul id="results">
-                    <!-- search result content-->
-                </ul>
-                <output id="no-result">
-                    <!-- no results content -->
-                </output>
-            </section>
-        </search>
-    </nav>
+  <body>
+    <div id="header-container"></div>
 
     <main>
-        <a href="./skin.html?skin=Nizzuta">
-            <div class="card">
-                <img class="skinrender" src="images/Nizzuta.png" alt="skin de Nizzuta">
-                <div class="container_card">
-                    <h4><b>Nizzuta</b></h4>
-                </div>
-            </div>
-        </a>
-        <a href="./skin.html?skin=Farfadox">
-            <div class="card">
-                <img class="skinrender" src="images/Farfadox.png" alt="skin de Farfadox">
-                <div class="container_card">
-                    <h4><b>Farfadox</b></h4>
-                </div>
-            </div>
-        </a>
-        <a href="./skin.html?skin=MonsieurLuix">
-            <div class="card">
-                <img class="skinrender" src="images/MonsieurLuix.png" alt="skin de MonsieurLuix">
-                <div class="container_card">
-                    <h4><b>MonsieurLuix</b></h4>
-                </div>
-            </div>
-        </a>
-        <a href="./skin.html?skin=charxzn">
-            <div class="card">
-                <img class="skinrender" src="images/charxzn.png" alt="skin de charxzn">
-                <div class="container_card">
-                    <h4><b>charxzn</b></h4>
-                </div>
-            </div>
-        </a>
-        <a href="./skin.html?skin=VegettaGaymer">
-            <div class="card">
-                <img class="skinrender" src="images/VegettaGaymer.png" alt="skin de Vegeta">
-                <div class="container_card">
-                    <h4><b>VegettaGaymer</b></h4>
-                </div>
-            </div>
-        </a>
+      <div id="posts-container"></div>
+
+      <div id="loader"> Cargando... </div>
+
     </main>
 
-    <footer>
-        <div class="footer-flex-container">
-            <div class="footer-entry">
-                <h2 class="footer-heading"><img id="footer-img" src="./images/icono_alfabetoromano.png"
-                        alt="Logo de Pixelskin"> Pixelskin</h2>
-                Pixelskin sirve para buscar, descargar y subir aspectos (skins) personalizados para personajes de
-                Minecraft de forma gratuita, utilizando su biblioteca comunitaria.
-            </div>
+    <div id="footer-container"></div>
 
-            <div class="footer-entry">
-                <h2 class="footer-heading">Contacto</h2>
-                <ul class="footer-linklist">
-                    <li><a class="footer-link" href="mailto:jeremias.martinez@est.fi.uncoma.edu.ar">
-                            <i class="fa-solid fa-envelope"></i>
-                            Jeremías Martinez
-                        </a>
-                    <li><a class="footer-link" href="mailto:lucas.sepulveda@est.fi.uncoma.edu.ar">
-                            <i class="fa-solid fa-envelope"></i>
-                            Lucas Sepúlveda
-                        </a>
-                    <li><a class="footer-link" href="mailto:jorge.ugarte@est.fi.uncoma.edu.ar">
-                            <i class="fa-solid fa-envelope"></i>
-                            Jorge Ugarte
-                        </a>
-                </ul>
-            </div>
-
-            <div class="footer-entry">
-                <h2 class="footer-heading">Recursos</h2>
-                <ul>
-                    <li><a class="footer-link" href="https://github.com/jereciucio/pixelskin"><i
-                                class="fa-brands fa-github"></i> GitHub</li></a>
-                </ul>
-
-            </div>
-        </div>
-
-    </footer>
-</body>
+    <!-- Cargar los componentes de forma dinámica -->
+    <script src="/components/footer.js"></script>
+    <script src="/components/header.js"></script>
+    <script src="/components/posts.js"></script>
+  </body>
 
 </html>

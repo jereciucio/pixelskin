@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {createPost, getPost, getPostById} = require('../controllers/tagController');
+const {createPost, getPost, getPostById} = require('../controllers/postController');
 const validatePost = require('../validators/postValidator');
 
 // Create Tag

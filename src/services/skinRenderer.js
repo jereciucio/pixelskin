@@ -149,9 +149,9 @@ async function renderSkin(skinBuffer, isSlim, view, scale = 32) {
     const skinImage = await loadImage(skinBuffer);
 
     if (view === "front") {
-	renderFront(skinImage, isSlim, scale);
+	return renderFront(skinImage, isSlim, scale);
     } else {
-	renderBack(skinImage, isSlim, scale);
+	return renderBack(skinImage, isSlim, scale);
     }
 }
 
